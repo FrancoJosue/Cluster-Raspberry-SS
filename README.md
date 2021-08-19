@@ -153,7 +153,7 @@ update-alternatives --config java
     sudo mount -a
     ```
 
-15. crear los directorios donde se guardara la informacion del namenode y datanode, la asignacion de estas carpetas esta en el archivo [hdfs-site.xml] (Hadoop/hdfs-site.xml)
+15. crear los directorios donde se guardara la informacion del namenode y datanode, la asignacion de estas carpetas esta en el archivo [hdfs-site.xml](Hadoop/hdfs-site.xml)
 ```
 mkdir -p /opt/workspace/hdfs/namenode/ 
 mkdir -p /opt/workspace/hdfs/datanode/
