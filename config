@@ -1,0 +1,11 @@
+Host nodo1
+User hadoop
+Hostname 192.168.0.201
+
+Host nodo2
+User hadoop
+Hostname 192.168.0.202
+
+Host nodo3
+User hadoop
+Hostname 192.168.0.203
