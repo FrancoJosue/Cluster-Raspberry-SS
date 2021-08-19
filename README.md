@@ -164,7 +164,7 @@ sudo nano .bashrc
       ```
       nano /opt/hadoop-3.3.0/etc/hadoop/master
       ```
-      - archivo [worjers](Hadoop/workers) 
+      - archivo [workers](Hadoop/workers) 
       ```
       nano /opt/hadoop-3.3.0/etc/hadoop/workers
       ```
