@@ -1,5 +1,5 @@
 # Cluster-Raspberry-SS
-
+Configuración para un cluster conformado por 3 nodos
 ## Configuración inicial de ubuntu
 
 Configuración para Hadoop y Spark en una raspberry Pi 4 con Ubuntu Server
