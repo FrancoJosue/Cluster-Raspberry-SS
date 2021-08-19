@@ -31,7 +31,11 @@ sudo tzselect
 ```
 sudo apt-get install openjdk-8-jdk
 ```
-6. bajar frameworks
+6. instalar jupyter
+```
+ sudo apt-get install jupyter
+```
+7. bajar frameworks
 ```
 ## bajar hadoop
 
@@ -58,7 +62,7 @@ wget https://downloads.apache.org/ambari/ambari-2.7.5/apache-ambari-2.7.5-src.ta
 wget https://downloads.apache.org/flume/1.9.0/apache-flume-1.9.0-src.tar.gz
 ```
 
-6. descomprimir y mandar al directorio /opt como root
+8. descomprimir y mandar al directorio /opt como root
 
 ```
 tar xvf hadoop-3.3.0.tar.gz -C /opt
@@ -71,22 +75,26 @@ tar xvf apache-flume-1.9.0-src.tar.gz -C /opt
 
 
 
-7. cambiar  permisos para que sean de hadoop
+9. cambiar  permisos para que sean de hadoop
 
 ```
 sudo chown -R hadoop:hadoop /opt/*
 ```
 
-8. buscar el directorio de instalación Java JDK.
+10. buscar el directorio de instalación Java JDK.
 ```
 update-alternatives --config java
 ```
 
-9. agregar las variables al final de archivo
+11. agregar las variables al final de archivo
 [.bashrc](.bashrc)
 
 10 Cargar las nuevas variables 
 ```
 . ./.bashrc
+```
+11. agregar un export al archivo (.hadoop-env.sh)
+```
+nano /opt/hadoop-3.3.0/etc/hadoop/hadoop-env.sh
 ```
 
