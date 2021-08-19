@@ -31,8 +31,10 @@ sudo tzselect
 ```
 sudo apt-get install openjdk-8-jdk
 ```
-6. bajar hadoop
+6. bajar frameworks
 ```
+## bajar hadoop
+
 wget https://downloads.apache.org/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz
 
 #bajar spark
@@ -80,8 +82,8 @@ sudo chown -R hadoop:hadoop /opt/*
 update-alternatives --config java
 ```
 
-
-
+9. agregar las variables al final de archivo
+https://github.com/FrancoJosue/Cluster-Raspberry-SS/blob/main/.bashrc
 
 
 
