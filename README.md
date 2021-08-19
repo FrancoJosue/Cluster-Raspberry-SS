@@ -73,26 +73,18 @@ tar xvf apache-ambari-2.7.5-src.tar.gz -C /opt
 tar xvf apache-flume-1.9.0-src.tar.gz -C /opt
 ```
 
-
-
-9. cambiar permisos para que sean de hadoop
-
-```
-sudo chown -R hadoop:hadoop /opt/*
-```
-
-10. buscar el directorio de instalación Java JDK.
+9. buscar el directorio de instalación Java JDK.
 ```
 update-alternatives --config java
 ```
 
-11. agregar las variables al final de archivo [.bashrc](.bashrc)
+10. agregar las variables al final de archivo [.bashrc](.bashrc)
 
-12. cargar las nuevas variables 
+11. cargar las nuevas variables 
 ```
 . ./.bashrc
 ```
-13. modificar los archivos de configuración
+12. modificar los archivos de configuración
     - archivos de configuración Hadoop ubicados en /opt/hadoop-3.3.0/etc/hadoop/
       - archivo [hadoop-env.sh](Hadoop/hadoop-env.sh) 
       ```
@@ -135,7 +127,7 @@ update-alternatives --config java
       ```
       nano  /opt/spark-3.0.2-bin-hadoop3.2/conf/slaves 
       ```
-14. montar la carpeta /opt en un ssd(opcional) 
+13. montar la carpeta /opt en un ssd(opcional) 
     - formatear ssd 
     ```
     mkfs.ext4 /dev/sda
@@ -153,11 +145,17 @@ update-alternatives --config java
     sudo mount -a
     ```
 
-15. crear los directorios donde se guardara la informacion del namenode y datanode, la asignacion de estas carpetas esta en el archivo [hdfs-site.xml](Hadoop/hdfs-site.xml)
+14. crear los directorios donde se guardara la informacion del namenode y datanode, la asignacion de estas carpetas esta en el archivo [hdfs-site.xml](Hadoop/hdfs-site.xml)
 ```
 mkdir -p /opt/workspace/hdfs/namenode/ 
 mkdir -p /opt/workspace/hdfs/datanode/
 ```
+15. cambiar permisos para que sean de hadoop
+
+```
+sudo chown -R hadoop:hadoop /opt/*
+```
+
 16. formatear el espacio del namenode
 ```
 hdfs namenode -format -force
@@ -166,4 +164,12 @@ hdfs namenode -format -force
 ```
 start-dfs.sh && start-yarn.sh
 start-master.sh && start-slaves.sh
+```
+18. para ver los servicios de cada nodo usamos el siguiente comando
+```
+jps
+```
+19. Por ultimo empezaremos a trabajar con pyspark, el siguiente comando nos dara como resultado una dirreccion con la cual podemos trabajar con jupyter
+```
+pyspark
 ```
