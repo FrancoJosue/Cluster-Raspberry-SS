@@ -82,7 +82,7 @@ sudo chown -R hadoop:hadoop /opt/*
 update-alternatives --config java
 ```
 
-9. agregar las variables al final de archivo .bashrc
+9. agregar las variables al final de archivo
 [.bashrc](.bashrc)
 
 
