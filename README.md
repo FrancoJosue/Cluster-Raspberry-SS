@@ -53,10 +53,20 @@ nano /etc/hosts
    ```
    - llaves autorizadas
    La llave publica es generada en/home/hadoop/.ssh/id_rsa.pub Esa llave la copiaremos en cada Raspberry en el archivo /home/hadoop/.ssh/authorizedkeys
+   
+   
    ejemplo: 
+   
+   
    ssh-rsa asdsadasdasdasdasdasdasd= hadoop@nodo1
+   
+   
    ssh-rsa asdsadasdasdasdasdasdasd= hadoop@nodo2
+   
+   
    ssh-rsa asdsadasdasdasdasdasdasd= hadoop@nodo3
+   
+   
    
    ```
    sudo nano .ssh/authorizedkeys
