@@ -144,11 +144,26 @@ update-alternatives --config java
     ```
     sudo nano /etc/fstab
     ```
-    y agregar lo siguiente:
+    - y agregar lo siguiente:
     ```
     /dev/sda1       /opt/workspace  ext4    defaults        0       0
     ```
-    montar ssd
+    - montar ssd
     ```
     sudo mount -a
     ```
+
+15. crear los directorios donde se guardara la informacion del namenode y datanode, la asignacion de estas carpetas esta en el archivo [hdfs-site.xml] (Hadoop/hdfs-site.xml)
+```
+mkdir -p /opt/workspace/hdfs/namenode/ 
+mkdir -p /opt/workspace/hdfs/datanode/
+```
+16. formatear el espacio del namenode
+```
+hdfs namenode -format -force
+```
+17. Levantar el cluster
+```
+start-dfs.sh && start-yarn.sh
+start-master.sh && start-slaves.sh
+```
