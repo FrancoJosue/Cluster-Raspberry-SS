@@ -93,8 +93,35 @@ update-alternatives --config java
 . ./.bashrc
 ```
 13. modificar los archivos de configuracion
-    - archivos de configuracion Hadoop
-      - agregar un export en el archivo [hadoop-env.sh](Hadoop/hadoop-env.sh) ubicado en /opt/hadoop-3.3.0/etc/hadoop/
+    - archivos de configuracion Hadoop ubicados en /opt/hadoop-3.3.0/etc/hadoop/
+      - archivo [hadoop-env.sh](Hadoop/hadoop-env.sh) 
+      ```
+      nano /opt/hadoop-3.3.0/etc/hadoop/hadoop-env.sh
+      ```
+      - archivo [core-site.xml](Hadoop/core-site.xml) 
+      ```
+      nano /opt/hadoop-3.3.0/etc/hadoop/core-site.xml
+      ```
+      - archivo [hdfs-site.xml](Hadoop/hdfs-site.xml) 
+      ```
+      nano /opt/hadoop-3.3.0/etc/hadoop/hdfs-site.xml
+      ```
+      - archivo [mapred-site.xml](Hadoop/mapred-site.xml) 
+      ```
+      nano /opt/hadoop-3.3.0/etc/hadoop/mapred-site.xml
+      ```
+      - archivo [yarn-site.xml](Hadoop/yarn-site.xml) 
+      ```
+      nano /opt/hadoop-3.3.0/etc/hadoop/yarn-site.xml
+      ```
+      - archivo [master](Hadoop/master) 
+      ```
+      nano /opt/hadoop-3.3.0/etc/hadoop/master
+      ```
+      - archivo [worjers](Hadoop/workers) 
+      ```
+      nano /opt/hadoop-3.3.0/etc/hadoop/workers
+      ```
     - archivos de configuracion spark
     
     - 
