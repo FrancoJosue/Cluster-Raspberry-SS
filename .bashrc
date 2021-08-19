@@ -12,6 +12,7 @@ export PATH=$PATH:/$HADOOP_HOME/bin:/$HADOOP_HOME/sbin
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export LD_LIBRARY_PATH="$HADOOP_HOME/lib/native/:$LD_LIBRARY_PATH"
 export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+
 # variables hadoop prueba
 
 export HADOOP_MAPRED_HOME=${HADOOP_HOME}
