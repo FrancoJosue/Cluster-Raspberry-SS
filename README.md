@@ -1,8 +1,7 @@
 # Cluster-Raspberry-SS
 
-Configuración inicial para Hadoop en una raspberry Pi 4 con Ubuntu server 
-
-1. se cambiara el nombre del hostname para poder reconocerlos
+Configuración para Hadoop y Spark en una raspberry Pi 4 con Ubuntu Server
+1. se cambiara el nombre del hostname para poder reconocer los nodos
 
 ```
 hostnamectl set-hostname nodo1
@@ -26,7 +25,7 @@ sudo usermod -aG sudo hadoop
 ```
 sudo tzselect
 ```
-
+5. Configuracion de red
 5. instalar jdk 8
 ```
 sudo apt-get install openjdk-8-jdk
