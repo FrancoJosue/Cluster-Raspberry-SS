@@ -86,14 +86,13 @@ sudo chown -R hadoop:hadoop /opt/*
 update-alternatives --config java
 ```
 
-11. agregar las variables al final de archivo
-[.bashrc](.bashrc)
+11. agregar las variables al final de archivo [.bashrc](.bashrc)
 
 12 Cargar las nuevas variables 
 ```
 . ./.bashrc
 ```
-13. agregar un export al archivo (.hadoop-env.sh)
+13. agregar un export al archivo (hadoop-env.sh) ubicado en /opt/hadoop-3.3.0/etc/hadoop/
 ```
 nano /opt/hadoop-3.3.0/etc/hadoop/hadoop-env.sh
 ```
