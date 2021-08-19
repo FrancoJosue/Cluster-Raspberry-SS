@@ -5,7 +5,6 @@
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64
 export PATH=$PATH:$JAVA_HOME/bin
 
-
 #variables hadoop
 
 export HADOOP_HOME=/opt/hadoop-3.3.0
