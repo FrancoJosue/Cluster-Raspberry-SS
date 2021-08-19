@@ -93,9 +93,9 @@ update-alternatives --config java
 . ./.bashrc
 ```
 13. modificar los archivos de configuracion
-    -archivos de configuracion Hadoop
-     - agregar un export en el archivo [hadoop-env.sh](Hadoop/hadoop-env.sh) ubicado en /opt/hadoop-3.3.0/etc/hadoop/
-    -archivos de configuracion spark
+    - archivos de configuracion Hadoop
+      - agregar un export en el archivo [hadoop-env.sh](Hadoop/hadoop-env.sh) ubicado en /opt/hadoop-3.3.0/etc/hadoop/
+    - archivos de configuracion spark
     
     - 
 ```
