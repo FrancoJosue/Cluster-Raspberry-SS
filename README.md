@@ -85,4 +85,8 @@ update-alternatives --config java
 9. agregar las variables al final de archivo
 [.bashrc](.bashrc)
 
+10 Cargar las nuevas variables 
+```
+. ./.bashrc
+```
 
