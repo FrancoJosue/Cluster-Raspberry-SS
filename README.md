@@ -65,12 +65,12 @@ wget https://downloads.apache.org/flume/1.9.0/apache-flume-1.9.0-src.tar.gz
 8. descomprimir y mandar al directorio /opt como root
 
 ```
-tar xvf hadoop-3.3.0.tar.gz -C /opt
-tar xvf spark-3.0.2-bin-hadoop3.2.tgz -C /opt
-tar xvf apache-hive-3.1.2-src.tar.gz -C /opt
-tar xvf hsqoop-1.99.7.tar.gz -C /opt
-tar xvf apache-ambari-2.7.5-src.tar.gz -C /opt
-tar xvf apache-flume-1.9.0-src.tar.gz -C /opt
+sudo tar xvf hadoop-3.3.0.tar.gz -C /opt
+sudo tar xvf spark-3.0.2-bin-hadoop3.2.tgz -C /opt
+sudo tar xvf apache-hive-3.1.2-src.tar.gz -C /opt
+sudo tar xvf hsqoop-1.99.7.tar.gz -C /opt
+sudo tar xvf apache-ambari-2.7.5-src.tar.gz -C /opt
+sudo tar xvf apache-flume-1.9.0-src.tar.gz -C /opt
 ```
 
 9. buscar el directorio de instalación Java JDK.
@@ -79,6 +79,10 @@ update-alternatives --config java
 ```
 
 10. agregar las variables al final de archivo [.bashrc](.bashrc)
+```
+sudo nano .bashrc
+```
+
 
 11. cargar las nuevas variables 
 ```
