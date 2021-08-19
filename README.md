@@ -209,6 +209,7 @@ mkdir -p /opt/workspace/hdfs/datanode/
 ```
 sudo chown -R hadoop:hadoop /opt/*
 ```
+## Despliegue
 
 20. formatear el espacio del namenode
 ```
