@@ -1,32 +1,34 @@
 # Cluster-Raspberry-SS
 
-## se cambiara el nombre del hostname para poder reconocerlos
+Configuracion inicial para Hadoop en una raspberry Pi 4 
 
-hostnamectl set-hostname nodo1
+1. se cambiara el nombre del hostname para poder reconocerlos
 
-# Creamos el grupo hadoop y creamos el usuario hadoop
+```hostnamectl set-hostname nodo1```
 
+2. Creamos el grupo hadoop y creamos el usuario hadoop
+
+```
 sudo addgroup hadoop
 sudo adduser --ingroup hadoop hadoop
+```
 
-## agregar el usuario al grupo sudo:
+3. agregar el usuario al grupo sudo:
 
-sudo usermod -aG sudo hadoop
+```sudo usermod -aG sudo hadoop```
 
-## eliminamos el usuario ubuntu, que es el que trae por defecto esta distribucion.
-sudo userdel -rf 
 
-## copnfiguramos zona horaria
-
+4. copnfiguramos zona horaria
+```
 sudo tzselect
+```
 
-
-# instalar jdk 11
-
-sudo apt-get install openjdk-11-jdk
-
-# bajar hadoop
-
+5. instalar jdk 8
+```
+sudo apt-get install openjdk-8-jdk
+```
+6. bajar hadoop
+```
 wget https://downloads.apache.org/hadoop/common/hadoop-3.3.0/hadoop-3.3.0.tar.gz
 
 #bajar spark
@@ -48,6 +50,7 @@ wget https://downloads.apache.org/ambari/ambari-2.7.5/apache-ambari-2.7.5-src.ta
 ## bajar flume
 
 wget https://downloads.apache.org/flume/1.9.0/apache-flume-1.9.0-src.tar.gz
+```
 
 # descomprimir y mandar a un directorio como root
 
