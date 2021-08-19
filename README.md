@@ -123,10 +123,16 @@ update-alternatives --config java
       nano /opt/hadoop-3.3.0/etc/hadoop/workers
       ```
     - archivos de configuracion spark
-    
-    - 
-```
-nano /opt/hadoop-3.3.0/etc/hadoop/hadoop-env.sh
-```
-    
+      - archivo [spark-env.sh](Spark/spark-env.sh)  
+      ```
+      nano  /opt/spark-3.0.2-bin-hadoop3.2/conf/spark-env.sh 
+      ```
+      - archivo [spark-defaults.conf](Spark/spark-defaults.conf) 
+      ```
+      nano  /opt/spark-3.0.2-bin-hadoop3.2/conf/spark-defaults.conf 
+      ```
+      - archivo [slaves](Spark/slaves)   
+      ```
+      nano  /opt/spark-3.0.2-bin-hadoop3.2/conf/slaves 
+      ```
 
