@@ -1,6 +1,6 @@
 # Cluster-Raspberry-SS
 
-Configuracion inicial para Hadoop en una raspberry Pi 4 con Ubuntu server 
+Configuración inicial para Hadoop en una raspberry Pi 4 con Ubuntu server 
 
 1. se cambiara el nombre del hostname para poder reconocerlos
 
@@ -22,7 +22,7 @@ sudo usermod -aG sudo hadoop
 ```
 
 
-4. copnfiguramos zona horaria
+4. configuramos zona horaria
 ```
 sudo tzselect
 ```
@@ -75,7 +75,7 @@ tar xvf apache-flume-1.9.0-src.tar.gz -C /opt
 
 
 
-9. cambiar  permisos para que sean de hadoop
+9. cambiar permisos para que sean de hadoop
 
 ```
 sudo chown -R hadoop:hadoop /opt/*
@@ -88,12 +88,12 @@ update-alternatives --config java
 
 11. agregar las variables al final de archivo [.bashrc](.bashrc)
 
-12 Cargar las nuevas variables 
+12. cargar las nuevas variables 
 ```
 . ./.bashrc
 ```
-13. modificar los archivos de configuracion
-    - archivos de configuracion Hadoop ubicados en /opt/hadoop-3.3.0/etc/hadoop/
+13. modificar los archivos de configuración
+    - archivos de configuración Hadoop ubicados en /opt/hadoop-3.3.0/etc/hadoop/
       - archivo [hadoop-env.sh](Hadoop/hadoop-env.sh) 
       ```
       nano /opt/hadoop-3.3.0/etc/hadoop/hadoop-env.sh
@@ -122,7 +122,7 @@ update-alternatives --config java
       ```
       nano /opt/hadoop-3.3.0/etc/hadoop/workers
       ```
-    - archivos de configuracion spark
+    - archivos de configuración spark ubicados en /opt/spark-3.0.2-bin-hadoop3.2/conf/
       - archivo [spark-env.sh](Spark/spark-env.sh)  
       ```
       nano  /opt/spark-3.0.2-bin-hadoop3.2/conf/spark-env.sh 
@@ -135,4 +135,19 @@ update-alternatives --config java
       ```
       nano  /opt/spark-3.0.2-bin-hadoop3.2/conf/slaves 
       ```
-
+14. montar la carpeta /opt en un ssd(opcional) 
+    - formatear ssd 
+    ```
+    mkfs.ext4 /dev/sda
+    ```
+    - montar el ssd
+    ```
+    sudo nano /etc/fstab
+    ```
+    y agregar
+    ```
+    /dev/sda1       /opt/workspace  ext4    defaults        0       0
+    ```
+    ```
+    sudo mount -a
+    ```
