@@ -25,16 +25,51 @@ sudo usermod -aG sudo hadoop
 ```
 sudo tzselect
 ```
-5. Configuracion de red
-5. instalar jdk 8
+5. para la configuración de red modificaremos el archivo [50-cloud-init.yaml](50-cloud-init.yaml) ubicado en /etc/netplan/ , para asignar una ip estatica
+```
+sudo nano /etc/netplan/50-cloud-init.yaml
+
+```
+
+6. aplicar la configuración de netplan
+```
+sudo netplan apply
+```
+Ejemplos y explicacion de [netplan](https://netplan.io/examples/)
+
+7. configuracióna de Hostnames,agregar los nodos en el archivo [hosts](hosts) ubidado en /etc/ 
+```
+nano /etc/hosts
+```
+8. coneccion SSH
+   - generar llave publica
+   ```
+   ssh-keygen
+   ```
+   
+   - SSH Aliases [config](config)
+   ```
+   sudo nano .shh/config
+   ```
+   - llaves autorizadas
+   La llave publica es generada en/home/hadoop/.ssh/id_rsa.pub Esa llave la copiaremos en cada Raspberry en el archivo /home/hadoop/.ssh/authorizedkeys
+   ejemplo: 
+   ssh-rsa asdsadasdasdasdasdasdasd= hadoop@nodo1
+   ssh-rsa asdsadasdasdasdasdasdasd= hadoop@nodo2
+   ssh-rsa asdsadasdasdasdasdasdasd= hadoop@nodo3
+   
+   ```
+   sudo nano .ssh/authorizedkeys
+   ```
+9. instalar jdk 8
 ```
 sudo apt-get install openjdk-8-jdk
 ```
-6. instalar jupyter
+10. instalar jupyter
 ```
  sudo apt-get install jupyter
 ```
-7. bajar frameworks
+11. bajar frameworks
 ```
 ## bajar hadoop
 
@@ -61,7 +96,7 @@ wget https://downloads.apache.org/ambari/ambari-2.7.5/apache-ambari-2.7.5-src.ta
 wget https://downloads.apache.org/flume/1.9.0/apache-flume-1.9.0-src.tar.gz
 ```
 
-8. descomprimir y mandar al directorio /opt como root
+12. descomprimir y mandar al directorio /opt como root
 
 ```
 sudo tar xvf hadoop-3.3.0.tar.gz -C /opt
@@ -72,22 +107,22 @@ sudo tar xvf apache-ambari-2.7.5-src.tar.gz -C /opt
 sudo tar xvf apache-flume-1.9.0-src.tar.gz -C /opt
 ```
 
-9. buscar el directorio de instalación Java JDK.
+13. buscar el directorio de instalación Java JDK.
 ```
 update-alternatives --config java
 ```
 
-10. agregar las variables al final de archivo [.bashrc](.bashrc)
+14. agregar las variables al final de archivo [.bashrc](.bashrc)
 ```
 sudo nano .bashrc
 ```
 
 
-11. cargar las nuevas variables 
+15. cargar las nuevas variables 
 ```
 . ./.bashrc
 ```
-12. modificar los archivos de configuración
+16. modificar los archivos de configuración
     - archivos de configuración Hadoop ubicados en /opt/hadoop-3.3.0/etc/hadoop/
       - archivo [hadoop-env.sh](Hadoop/hadoop-env.sh) 
       ```
@@ -130,7 +165,7 @@ sudo nano .bashrc
       ```
       nano  /opt/spark-3.0.2-bin-hadoop3.2/conf/slaves 
       ```
-13. montar la carpeta /opt en un ssd(opcional) 
+17. montar la carpeta /opt en un ssd(opcional) 
     - formatear ssd 
     ```
     mkfs.ext4 /dev/sda
@@ -148,31 +183,31 @@ sudo nano .bashrc
     sudo mount -a
     ```
 
-14. crear los directorios donde se guardara la informacion del namenode y datanode, la asignacion de estas carpetas esta en el archivo [hdfs-site.xml](Hadoop/hdfs-site.xml)
+18. crear los directorios donde se guardara la informacion del namenode y datanode, la asignacion de estas carpetas esta en el archivo [hdfs-site.xml](Hadoop/hdfs-site.xml)
 ```
 mkdir -p /opt/workspace/hdfs/namenode/ 
 mkdir -p /opt/workspace/hdfs/datanode/
 ```
-15. cambiar permisos para que sean de hadoop
+19. cambiar permisos para que sean de hadoop
 
 ```
 sudo chown -R hadoop:hadoop /opt/*
 ```
 
-16. formatear el espacio del namenode
+20. formatear el espacio del namenode
 ```
 hdfs namenode -format -force
 ```
-17. Levantar el cluster
+21. Levantar el cluster
 ```
 start-dfs.sh && start-yarn.sh
 start-master.sh && start-slaves.sh
 ```
-18. para ver los servicios de cada nodo usamos el siguiente comando
+22. para ver los servicios de cada nodo usamos el siguiente comando
 ```
 jps
 ```
-19. Por ultimo empezaremos a trabajar con pyspark, el siguiente comando nos dara como resultado una dirreccion con la cual podemos trabajar con jupyter
+23. Por ultimo empezaremos a trabajar con pyspark, el siguiente comando nos dara como resultado una dirreccion con la cual podemos trabajar con jupyter
 ```
 pyspark
 ```
