@@ -140,14 +140,15 @@ update-alternatives --config java
     ```
     mkfs.ext4 /dev/sda
     ```
-    - montar el ssd
+    - modificar el archivo /fstab para que cada que se reinicie el SO el ssd siga montado
     ```
     sudo nano /etc/fstab
     ```
-    y agregar
+    y agregar lo siguiente:
     ```
     /dev/sda1       /opt/workspace  ext4    defaults        0       0
     ```
+    montar ssd
     ```
     sudo mount -a
     ```
