@@ -1,5 +1,7 @@
 # Cluster-Raspberry-SS
 
+## Configuración inicial de ubuntu
+
 Configuración para Hadoop y Spark en una raspberry Pi 4 con Ubuntu Server
 1. se cambiara el nombre del hostname para poder reconocer los nodos
 
@@ -25,6 +27,7 @@ sudo usermod -aG sudo hadoop
 ```
 sudo tzselect
 ```
+## Configuración de red
 5. para la configuración de red modificaremos el archivo [50-cloud-init.yaml](50-cloud-init.yaml) ubicado en /etc/netplan/ , para asignar una ip estatica
 ```
 sudo nano /etc/netplan/50-cloud-init.yaml
@@ -37,11 +40,12 @@ sudo netplan apply
 ```
 Ejemplos y explicacion de [netplan](https://netplan.io/examples/)
 
+## Configuración SSH
 7. configuracióna de Hostnames,agregar los nodos en el archivo [hosts](hosts) ubidado en /etc/ 
 ```
 nano /etc/hosts
 ```
-8. coneccion SSH
+8. coneccion SSH sin usuario y contraseña
    - generar llave publica
    ```
    ssh-keygen
@@ -71,6 +75,7 @@ nano /etc/hosts
    ```
    sudo nano .ssh/authorizedkeys
    ```
+## Instalación 
 9. instalar jdk 8
 ```
 sudo apt-get install openjdk-8-jdk
@@ -132,6 +137,7 @@ sudo nano .bashrc
 ```
 . ./.bashrc
 ```
+## Configuración Hadoop y Spark
 16. modificar los archivos de configuración
     - archivos de configuración Hadoop ubicados en /opt/hadoop-3.3.0/etc/hadoop/
       - archivo [hadoop-env.sh](Hadoop/hadoop-env.sh) 
