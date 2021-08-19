@@ -1,10 +1,12 @@
 # Cluster-Raspberry-SS
 
-Configuracion inicial para Hadoop en una raspberry Pi 4 
+Configuracion inicial para Hadoop en una raspberry Pi 4 con Ubuntu server 
 
 1. se cambiara el nombre del hostname para poder reconocerlos
 
-```hostnamectl set-hostname nodo1```
+```
+hostnamectl set-hostname nodo1
+```
 
 2. Creamos el grupo hadoop y creamos el usuario hadoop
 
@@ -15,7 +17,9 @@ sudo adduser --ingroup hadoop hadoop
 
 3. agregar el usuario al grupo sudo:
 
-```sudo usermod -aG sudo hadoop```
+```
+sudo usermod -aG sudo hadoop
+```
 
 
 4. copnfiguramos zona horaria
@@ -52,30 +56,30 @@ wget https://downloads.apache.org/ambari/ambari-2.7.5/apache-ambari-2.7.5-src.ta
 wget https://downloads.apache.org/flume/1.9.0/apache-flume-1.9.0-src.tar.gz
 ```
 
-# descomprimir y mandar a un directorio como root
+6. descomprimir y mandar al directorio /opt como root
 
-
+```
 tar xvf hadoop-3.3.0.tar.gz -C /opt
 tar xvf spark-3.0.2-bin-hadoop3.2.tgz -C /opt
 tar xvf apache-hive-3.1.2-src.tar.gz -C /opt
 tar xvf hsqoop-1.99.7.tar.gz -C /opt
 tar xvf apache-ambari-2.7.5-src.tar.gz -C /opt
 tar xvf apache-flume-1.9.0-src.tar.gz -C /opt
+```
 
 
 
+7. cambiar  permisos para que sean de hadoop
 
-# cambiar  permisos para que sean de hadoop
+```
+sudo chown -R hadoop:hadoop /opt/*
+```
 
-
-sudo chown -R hadoop:hadoop /opt/hadoop-3.3.0/
-# buscar el directorio de instalación Java JDK.
-
+8. buscar el directorio de instalación Java JDK.
+```
 update-alternatives --config java
+```
 
-# agregar los export al final usando como usuario hadoop
-
-nano .bashrc 
 
 
 
