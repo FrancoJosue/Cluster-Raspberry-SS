@@ -92,7 +92,7 @@ update-alternatives --config java
 ```
 . ./.bashrc
 ```
-13. agregar un export al archivo (./Hadoop/hadoop-env.sh) ubicado en /opt/hadoop-3.3.0/etc/hadoop/
+13. agregar un export al archivo [hadoop-env.sh](Hadoop/hadoop-env.sh) ubicado en /opt/hadoop-3.3.0/etc/hadoop/
 ```
 nano /opt/hadoop-3.3.0/etc/hadoop/hadoop-env.sh
 ```
